@@ -20,8 +20,8 @@ You need to import secure_config to use the library. You don't need the Test pro
 
 generate -- This  function generates the secure file and activation key to be delivered with the program (This is not part of the program itself, but rather a tool to make the file to be delivered with the program. You can also use it with a setup script or however you want for that matter. I'm not telling you what you can't do!)
 
-generate(path,key_length, password <to be embeded in the program>,args< "Tf", "TF", "Tp", etc. timestamp T corrupt / t disable; system fingerprint F corrupt / f disable; p pass errors if arg missing>,
-       print_data=True<Hides the library's printing useful if you use it in a program>, key<uses any string you put there as the key (optional)>)
+generate(path,key_length, password <to be embeded in the program>,args< ("Tf", "tF", "Tp","tf" etc). timestamp T corrupt / t disable; system fingerprint F corrupt / f disable; p ignore errors for missing args>,
+       print_data=False<Hides the library's printing. Useful if you use it in a program>, key<uses any string you put there as the key (optional)>)
 
 activate(path,password,auth_key) if file inactive or disabled
 
@@ -39,7 +39,7 @@ This library provides a level of security, but like anything made by humans, it 
 
 > The timestamp of the file, if read before copying the file, can be changed with easily available tools (if the attacker copies the file before reading the timestamp, this won't work).
 
-> The content is encrypted, but for certain purposes, the attacker might just need to restore an older file without tampering it's content. 
+> The content is encrypted, but for certain purposes (like hiding some new activity from a log), the attacker might just need to restore an older file without tampering it's content. 
 
 > If the encryption password is not securely stored, I don't even need to mention. (That wouldn't acutually be my fault though.)
 
