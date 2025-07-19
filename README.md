@@ -45,7 +45,7 @@ This library provides a level of security, but like anything made by humans, it 
 
 > Changes to hardware might also change the fingerprint and thus trigger an error.
 
-This library is not intended for military grade security. It is intended to provide a secure .config file, and protect against unauthorized tampering of a program's files, and for the most cases it will do its job. This is not designed to encrypt your most sensitive data, and its core security features can lead to LOSS OF THE STORED DATA. 
+This library is not intended for military grade security, nor it is suitable for professional use. It is intended to provide a secure .config file, and protect against casual unauthorized tampering of a program's files, and for the most cases it will do its job. This is not designed to encrypt your most sensitive data, and its core security features can lead to LOSS OF THE STORED DATA. 
 
 
 
