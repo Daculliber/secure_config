@@ -1,5 +1,5 @@
-Secure_config is a library that helps create secured configuration files for your apps. 
-This program will prevent your program to run configuration files created or modified by 
+Secure_config is a library that helps create secured configuration files for your apps. It 
+will prevent your program to run configuration files created or modified by 
 anyone except the program itself. 
 
 How it works:
