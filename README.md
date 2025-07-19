@@ -4,7 +4,7 @@ anyone except the program itself.
 
 How it works:
 > You generate an inactive configuration file and activation key that you deliver with the program (or you can 
-    set a user-picked password during the generation to not remind the user of the hated Windows keys). 
+    set a user-picked password during the generation to not remind the user of the hated proprietary keys). 
 > When the user activates the file with the activate() function, the program will automatically 
 make a fingerprint on your system as well as a timestamp. 
 > Based on the parameters you set when you generate the file, the program will disable or corrupt 
@@ -23,13 +23,14 @@ generate -- This  function generates the secure file and activation key to be de
 generate(path,key_length, password <to be embeded in the program>,args< ("Tf", "tF", "Tp","tf" etc). timestamp T corrupt / t disable; system fingerprint F corrupt / f disable; p ignore errors for missing args>,
        print_data=False<Hides the library's printing. Useful if you use it in a program>, key<uses any string you put there as the key (optional)>)
 
-activate(path,password,auth_key) if file inactive or disabled
+activate(path,password,auth_key) if file inactive or disabled.  Returns False for any exception. Returns False for any exception or atuthentification failure.
 
-read_file(path,password) returns the content of the file(ie. what YOU store inside it)
+read_file(path,password) returns the content of the file(ie. what YOU store inside it)  Returns False for any exception or tampered file.
 
-write_file(path,password,content) allows you to write [content: anything] to the file just like pickle
+write_file(path,password,content) allows you to write [content: anything] to the file just like pickle. Returns False for any exception or tampered file.
 
 def check_status(path,password) returns the status of the file as str: "inactive","disabled","active",or "corrupted".
+
 
 Security:
 
@@ -48,5 +49,9 @@ This library provides a level of security, but like anything made by humans, it 
 This library is not intended for military grade security, nor it is suitable for professional use. It is intended to provide a secure .config file, and protect against casual unauthorized tampering of a program's files, and for the most cases it will do its job. This is not designed to encrypt your most sensitive data, and its core security features can lead to LOSS OF THE STORED DATA. 
 
 
+## Dependencies
 
+This project utilizes the following key dependencies:
+
+> cryptography: A powerful and opinionated cryptographic library for Python, used here for all encryption and decryption processes. You can learn more about it on its GitHub repository(https://github.com/pyca/cryptography) or PyPI page (https://pypi.org/project/cryptography/).
 
