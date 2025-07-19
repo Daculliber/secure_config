@@ -15,7 +15,7 @@ sc=secure_config()
 #sc.generate(config_file,7,program_pass,"FT",print_data=False)
 #exit()
 
-####or with a setup henerating it with a user-picked password, or a custom key:
+####or with a setup generating it with a user-picked password, or a custom key:
 
 #print("Choose an activation / reactivation password for your program: ")
 #key=input("Enter password: ")
